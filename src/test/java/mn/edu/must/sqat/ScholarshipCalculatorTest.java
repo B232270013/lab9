@@ -162,4 +162,42 @@ class ScholarshipCalculatorTest {
                     new double[]{95, 85, 75, 65}));
     }
 
+    // ХЭСЭГ D: BOUNDARY VALUE TESTING
+
+
+    @Test
+    void boundary60() {
+        assertEquals("D", calculator.letterGrade(60));
+    }
+
+    @Test
+    void boundary59_99() {
+        assertEquals("F", calculator.letterGrade(59.99));
+    }
+
+    @Test
+    void boundary69_99() {
+        assertEquals("D", calculator.letterGrade(69.99));
+    }
+
+    @Test
+    void boundary0() {
+        assertEquals("F", calculator.letterGrade(0));
+    }
+
+    @Test
+    void boundary100() {
+        assertEquals("A", calculator.letterGrade(100));
+    }
+
+    @Test
+    void boundary89_99() {
+        assertEquals("B", calculator.letterGrade(89.99));
+    }
+
+    @Test
+    void boundary90() {
+        assertEquals("A", calculator.letterGrade(90));
+    }
+
 }
