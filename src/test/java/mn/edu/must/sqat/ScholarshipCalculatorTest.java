@@ -135,4 +135,31 @@ class ScholarshipCalculatorTest {
         assertEquals(0,
                 calculator.scholarship(2.9, 16, false));
     }
+    
+    // ХЭСЭГ C: LOOP BOUNDARY TESTING
+
+    @Test
+    void loopZero() {
+        assertThrows(IllegalArgumentException.class,
+                () -> calculator.gpa(new double[]{}));
+
+        assertThrows(IllegalArgumentException.class,
+                () -> calculator.gpa(null));
+    }
+
+    // 1 удаагийн давталт: ганц дүн
+    @Test
+    void loopOne() {
+        assertEquals(4.0,
+                calculator.gpa(new double[]{95}));
+    }
+
+    // 2 ба түүнээс олон удаагийн давталт
+    @Test
+    void loopTwoOrMore() {
+        assertEquals(2.5,
+                calculator.gpa(
+                    new double[]{95, 85, 75, 65}));
+    }
+
 }
